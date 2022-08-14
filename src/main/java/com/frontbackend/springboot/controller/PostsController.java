@@ -35,6 +35,7 @@ public class PostsController {
 
     @GetMapping("{id}")
     public ResponseEntity<Post> post(@PathVariable String id) {
+        System.out.println("id=" + id);
         Optional<Post> post = postService.findById(id);
         return post.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound()
