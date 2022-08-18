@@ -46,6 +46,7 @@ public class PostsController {
     public List<Post> list(@RequestParam(required = false) String title) {
         System.out.println("title=" + title);
         if (StringUtils.isEmpty(title)) {
+            System.out.println("Eampty Title");
             return postService.getAll();
         }
         return postService.findByTitle(title);
